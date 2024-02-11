@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro';
+import Section from '../components/Section.astro';
+import Article from '../components/Article.astro';
+import Title from '../components/Title.astro';
+---
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        })
+    })
+  })
+</script>
+<Layout title="Makin' Bacon - The Process">
+    <Header isHome={false} />
+    <div class="container mx-auto mb-12">
+        <form class="flex justify-center items-center">
+          <input type="search" class="py-2 px-4 rounded-l-full" placeholder="Search…" />
+          <button type="submit" class="py-2 px-3 bg-white rounded-r-full">
+            <svg class="h-6 w-6 text-orange-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="11" cy="11" r="8" />  <line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+    </div>
+    <div id="process" class="py-8">
+        <div class="container grid md:grid-cols-3 px-4 mx-auto">
+            <aside class="hidden md:block col-span-1">
+              <div class="sticky top-6">
+                <h3 class="font-semibold">
+                  <a href="#introduction">Introduction</a>
+                </h3>
+                <hr class="my-4" />
+                <h3 class="font-semibold">
+                  <a href="#what-youll-need">What you'll need</a>
+                </h3>
+                <hr class="my-4" />
+                <h3 class="font-semibold">
+                  <a href="#choosing-your-meat">Choosing your meat</a>
+                </h3>
+                <ul class="pl-4 ml-1 border-l border-slate-300 leading-7">
+                  <li>It's gotta be pork</li>
+                  <li>US vs international</li>
+                  <li>Picking the right cut</li>
+                </ul>
+                <hr class="my-4" />
+                <h3 class="font-semibold">
+                  <a href="#curing-your-meat">Curing your meat</a>
+                </h3>
+                <ul class="pl-4 ml-1 border-l border-slate-300 leading-7">
+                  <li>Curing basics</li>
+                  <li>The EQ method</li>
+                  <li>Wet vs. dry curing</li>
+                  <li>Curing salt</li>
+                </ul>
+                <hr class="my-4" />
+                <h3 class="font-semibold">
+                  <a href="#smoking-your-meat">Smoking your meat</a>
+                </h3>
+                <ul class="pl-4 ml-1 border-l border-slate-300 leading-7">
+                  <li>Why smoke</li>
+                  <li>US vs international</li>
+                  <li>Picking the right cut</li>
+                </ul>
+                <hr class="my-4" />
+                <h3 class="font-semibold">
+                  <a href="#cooking-your-bacon">Cooking your bacon</a>
+                </h3>
+                <ul class="pl-4 ml-1 border-l border-slate-300 leading-7">
+                  <li>Fried (in a pan)</li>
+                  <li>Roasted (in the oven)</li>
+                  <li>Other uses</li>
+                </ul>
+              </div>
+            </aside>
+            <main class="col-span-2">
+              <Section id="introduction">
+                <Title copy="Introduction" />
+                <Article id="first">
+                  <p>This guide is intended to be an in-depth, end-to-end guide to making your own bacon.</p>
+                  <p>You can follow the guide top to bottom, or use the navigation to jump to the relevant section.</p>
+                  <p>Please bear in mind that while the process can be simple, there is a huge variance in the approach, equipment and methods used.</p>
+                </Article>
+              </Section>
+              <hr class="border-t border-slate-300 my-6" />
+              <Section id="what-youll-need">
+                <Title copy="What you'll need" />
+                <Article id="first">
+                  <p>Despite what you've heard or read, getting started with making your own bacon is actually incredibly simple!</p>
+                  <p>There are some choices to make once you're up and running, but it's technically possible to cure meat with only salt. This means you can get started with only the following:</p>
+                  <ul class="list-disc border border-slate-300 px-8 py-4 bg-slate-100 rounded-lg">
+                    <li>Your chosen cut of pork</li>
+                    <li>A Ziploc bag (or vacuum sealed bag)</li>
+                    <li>Some salt (kosher preferred)</li>
+                    <li>A dash of patience</li>
+                  </ul>
+                  <p>Obviously this doesn't include any kind of smoke flavour, but you could use liquid smoke for that. At this point you'll have a cured piece of pork that is surprisingly close to the real deal!</p>
+                  <p>That being said, with some small effort and a little more equipment you'll find you are able to make bacon that will beat the pants off whatever you'd buy at the store, and at a cheaper price.</p>
+                  <p>Keep reading to find out the equipment required at each step, with some options and more detailed explanations.</p>
+                </Article>
+              </Section>
+              <hr class="border-t border-slate-300 my-6" />
+              <Section id="choosing-your-meat">
+                <Title copy="Choosing your meat" />
+                <Article id="first">
+                  <p class="flex gap-12">
+                    <img class="w-10" src="/images/us.svg" />
+                    <img class="w-10" src="/images/ca.svg" />
+                    <img class="w-10" src="/images/gb.svg" />
+                    <img class="w-10" src="/images/au.svg" />
+                  </p>
+                  <p>Depending upon where you live, the cut of meat used to make bacon might be different. In the US, bacon almost always means the belly of the pig. In Canada it might mean the belly or the loin. In the UK or Denmark, it might mean both!</p>
+                  <figure class="mb-6">
+                    <img class="rounded-lg drop-shadow-xl border border-slate-100 mb-2" src="/images/types-of-bacon.webp" />
+                    <figcaption class="text-sm italic text-slate-500">Bacon, danish bacon and peameal bacon</figcaption>
+                  </figure>
+                  <p>The good news is that the process is largely the same for any cut of pork. The bad news is that the cuts of meat available to you might be entirely dependent upon your location.</p>
+                  <img class="w-5/6" src="/images/pork-cuts.png" />
+                  <p>If you shop for meat at a butcher, it's worth asking them what they'd recommend for making home made bacon. If you are lucky enough to have a Costco near you, they often have pork bellies and pork loins that are perfect for making bacon.</p>
+                </Article>
+              </Section>
+              <hr class="border-t border-slate-300 my-6" />
+              <Section id="curing-your-meat">
+                <Title copy="Curing your meat" />
+                <Article id="first">
+                  <p>Humans have been curing meats for centuries, perhaps longer. Curing is a means of preserving food, and it works by removing moisture and replacing it with salt. Bacteria thrives in moisture, and it hates salt. A piece of pork that might last a week in your fridge can last a couple of months after it's been cured.</p>
+                  <figure class="mb-6">
+                    <img class="rounded-lg drop-shadow-xl border border-slate-100 mb-2" src="/images/curing-pork-belly.jpeg" />
+                    <figcaption class="text-sm italic text-slate-500">Applying dry cure to pork belly</figcaption>
+                  </figure>
+                  <p>Of course, these days we're less interested in preservation and more interested in the delicious flavour we associate with cured meats.</p>
+                  <p>While salt is the primary (often only) ingredient used for curing meats, there are two other ingredients we can add to boost the flavour and better preserve the meat:</p>
+                  <ul class="list-disc border border-slate-300 px-8 py-4 bg-slate-100 rounded-lg">
+                    <li>Sugar</li>
+                    <li>Curing salt</li>
+                  </ul>
+                  <p>The sugar is optional, but the bacon you buy from the supermarket almost certainly has sugar in it. The curing salt is the more important added ingredient.</p>
+                  <h4 class="text-xl mb-4">Curing Salt</h4>
+                  <p>Curing salt is salt, but with an added chemical ingredient - either nitrites or nitrates. Let's be clear from the start:</p>
+                  <div class="flex items-center px-4 py-4 gap-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg mb-6">
+                    <svg class="h-8 w-8 text-yellow-700"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>       
+                    <p class="m-0">Nitrites or nitrates can be dangerous in large quantities or if misused!</p>
+                  </div>
+                  <p>The good news is that with some care, we will only ever be dealing with tiny amounts. Done correctly, you will never need more than one teaspoon of curing salt for every five pounds of meat.</p>
+                </Article>
+              </Section>
+              <hr class="border-t border-slate-300 my-6" />
+              <Section id="smoking-your-meat">
+                <Title copy="Smoking your meat" />
+                <Article id="first">
+                  <p>Smoking can be one of the trickiest aspects of making your own bacon. The two distinct flavours most closely associated with bacon is the salt and the smoke. Once cured, you can cook and eat your bacon, but it will be missing that special signiture taste.</p>
+                  <figure class="mb-6">
+                    <img class="rounded-lg drop-shadow-xl border border-slate-100 mb-2" src="/images/smoking-bacon.webp" />
+                    <figcaption class="text-sm italic text-slate-500">The smoking process</figcaption>
+                  </figure>
+                  <p>While smoking was traditionally done to help preserve the meat, like the curing process we're less interested in preservation than we are in adding flavour. If you have access to liquid smoke, this may be enough to give your bacon that flavour kick you want.</p>
+                  <p>However, we do strongly recommend that you consider a true smoking process.</p>
+                  <h4 class="text-xl mb-4">Hot smoking vs cold smoking</h4>
+                  <p>There are two ways to smoke your bacon once cured: Hot or cold smoking. Each has it's own pros and cons, but both are viable options for making bacon.</p>
+                  <p>Either way, our goal is to subject our cured meat to a "thin", rapidly-moving smoke over a period of time, and the smoke will gradually penetrate the meat and impart it's flavour.</p>
+                  <h5 class="text-lg mb-2">Hot smoking</h5>
+                  <p>You may already be familiar with hot smoking if you smoke other meats like brisket or pulled pork. Hot smoking bacon is slightly different, but the process is very similar. The crucial difference is that we must monitor the temperature carefully, because as our cured meat warms there is a risk of bacteria developing.</p>
+                  <p>Set your smoker on the lowest possible temperature (around 180 ℉) and place the meat on a rack on the cooking grate. Once the internal temperature of the meat has reached 140 ℉ you can take it off. At this point your bacon is cooked, although you can put it in the fridge and then slice it up later and fry or roast it.</p>
+                  <h5 class="text-lg mb-2">Cold smoking</h5>
+                  <p>You may already be familiar with hot smoking if you smoke other meats like brisket or pulled pork.</p>
+                </Article>
+              </Section>
+              <Section id="cooking-your-bacon">
+                <Title copy="Cooking your bacon" />
+                <Article id="first">
+                  <p>If you've made it this far, congratulations! You are now ready to sample your delicious home made bacon.</p>
+                  <p class="text-3xl">🎉 🎉 🎉</p>
+                  <p>You're probably already familiar with cooking bacon if you're attempting to make your own but, as you can imagine, we have strong feelings about this part too!</p>
+                  <p>One of the great things about home made bacon is that you can slice to your desired level of thickness. Because of that, it's worth bearing in mind that you may need to adjust your cooking method and timing for home made bacon.</p>
+                  <h4 class="text-xl mb-4">Frying in a pan</h4>
+                  <p>Probably the easiest method, frying your bacon in a pan will give you a nice crispy end result fairly quickly. However, there is an increased chance of burning or overcooking with this approach.</p>
+                  <h4 class="text-xl mb-4">Roasting in the oven</h4>
+                  <p>Our preferred approach for cooking bacon (especially home made bacon) is roasting in a pan. While this method does take longer, you'll end up with a perfectly cooked end result, and the fat will render perfectly. You'll get a decent crisp, but the meat will still be tender.</p>
+                  <p>To roast bacon in the oven, slice your bacon and lay it on a baking sheet on some parchment paper or tin foil. Place the baking sheet in the oven and set your oven to 400 ℉. Once the bacon has some colour and a nice sizzle, flip it to cook the other side.</p>
+                  <p>You can optionally add two to three tablespoons of water to the baking sheet. This can help keep the bacon moist as it cooks, and the water will evaporate long before the bacon is cooked, so you won't lose any of the crunch!</p>
+                </Article>
+              </Section>
+            </main>
+        </div>
+    </div>
+</Layout>
+<style>
+    #process {
+		position: relative;
+		background-color: #e2e8f0;
+		color: #444;
+		margin-top: 3vw;
+		margin-bottom: 3vw;
+	}
+	#process:before,
+	#process:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		background-size: 100%;
+		height: 3vw;
+	}
+	#process:before {
+		top: -3vw;
+		background-image: url('/images/separator-bottom.svg');
+		background-position: top center;
+	}
+    #process:after {
+		bottom: -3vw;
+		background-image: url('/images/separator.svg');
+		background-position: bottom center;
+	}
+</style>

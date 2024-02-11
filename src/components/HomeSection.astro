@@ -1,0 +1,41 @@
+---
+interface Props {
+	className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section class={className}>
+	<div class="container px-2 py-12 mx-auto text-center uppercase leading-8 tracking-wide">
+		<slot />
+	</div>
+</section>
+<style>
+	section {
+		position: relative;
+		background-color: #e2e8f0;
+		color: #444;
+		margin-top: 3vw;
+		margin-bottom: 3vw;
+	}
+	section:before,
+	section:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		background-size: 100%;
+		height: 3vw;
+	}
+	section:before {
+		top: -3vw;
+		background-image: url('/images/separator-bottom.svg');
+		background-position: top center;
+	}
+	section:after {
+		bottom: -3vw;
+		background-image: url('/images/separator.svg');
+		background-position: bottom center;
+	}
+</style>

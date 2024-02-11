@@ -1,0 +1,29 @@
+---
+import Mast from '../svgs/mast.astro'
+
+interface Props {
+	isHome: boolean;
+}
+
+const { isHome } = Astro.props;
+---
+
+<header class={`${isHome ? 'home h-[50vh] md:h-[75vh]' : ''}`}>
+    <div class="container mx-auto px-4">
+      <a href="/" class="block">
+        <Mast />
+      </a>
+      <p class="text-xl">
+        Makin' Bacon is your guide to the surprisingly easy, delicious journey of learning to make your own bacon!
+      </p>
+    </div>
+  </header>
+  <style>
+    header.home {
+      background-image: url('/images/sizzle.gif');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+  </style>
+
