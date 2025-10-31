@@ -1,38 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import HomeSection from '../components/HomeSection.astro';
+import Section from '../components/Section.astro';
 ---
 
 <Layout title="Makin' Bacon!">
 	<Header isHome={true} />
 	<main>
-		<HomeSection className="top-[-3vw]">
+		<Section classes="torn">
 			<a href="/the-process">Get Started</a>
 			<a href="/resources">Resources</a>
 			<a href="/calculator">EQ Calculator</a>
-		</HomeSection>
+		</Section>
 		<section>
-			<div class="grid md:grid-cols-3 gap-4 mb-10 px-8 text-center">
-				<div>
-					<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">1</span>
-					<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Choose the cut</h3>
-					<p class="">Pork belly, pork shoulder or pork loin are the most common choices!</p>
+			<div class="container mx-auto px-4">
+				<p class="text-2xl text-center">
+					Making bacon at home is <span>easy</span>, <span>fun</span> and <span>cheap</span>!
+				</p>
+				<div class="grid md:grid-cols-3 gap-4 mb-10 text-center">
+					<div>
+						<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">1</span>
+						<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Choose the cut</h3>
+						<p class="">Pork belly, pork shoulder or pork loin are the most common choices!</p>
+					</div>
+					<div>
+						<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">2</span>
+						<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Cure the meat</h3>
+						<p class="">Curing removes bacteria and adds that delicious salty flavour!</p>
+					</div>
+					<div>
+						<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">3</span>
+						<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Smoke the meat</h3>
+						<p class="">Smoking helps preserve the meat and adds that classic bacon flavour!</p>
+					</div>
 				</div>
-				<div>
-					<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">2</span>
-					<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Cure the meat</h3>
-					<p class="">Curing removes bacteria and adds that delicious salty flavour!</p>
-				</div>
-				<div>
-					<span class="grid place-content-center w-10 h-10 mx-auto rounded-full text-white border-2 border-white text-xl font-semibold bg-black/50">3</span>
-					<h3 class="font-oswald text-3xl uppercase font-light my-4 text-orange-400 tracking-wider text-shadow">Smoke the meat</h3>
-					<p class="">Smoking helps preserve the meat and adds that classic bacon flavour!</p>
-				</div>
+				<a href="/the-process" class="font-oswald text-xl inline-block border-2 border-orange-200 text-orange-200 rounded-full py-3 px-10 font-light uppercase hover:bg-white/15 transition-colors">
+					Get Started
+				</a>
 			</div>
-			<a href="/the-process" class="font-oswald text-xl inline-block border-2 border-orange-200 text-orange-200 rounded-full py-3 px-10 font-light uppercase hover:bg-white/15 transition-colors">
-				Get Started
-			</a>
 		</section>
 	</main>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import Mast from '../svgs/mast.astro'
+import Button from './Button.astro'
 
 interface Props {
 	isHome: boolean;
@@ -13,9 +14,14 @@ const { isHome } = Astro.props;
       <a href="/" class="block">
         <Mast />
       </a>
-      <p class="text-xl">
-        Makin' Bacon is your guide to the surprisingly easy, delicious journey of learning to make your own bacon!
-      </p>
+      {isHome && (
+        <p class="text-xl drop-shadow mb-6">
+          Makin' Bacon is your guide to the surprisingly easy, delicious journey of learning to make your own bacon!
+        </p>
+        <Button href="/the-process" kind="primary" size="lg">
+          Get Started
+        </Button>
+      )}
     </div>
   </header>
   <style>

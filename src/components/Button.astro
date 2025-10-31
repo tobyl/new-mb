@@ -1,0 +1,28 @@
+---
+import className from 'classnames'
+
+interface Props {
+	href: string;
+	kind: string;
+    size: string;
+}
+
+const { href, kind, size } = Astro.props;
+
+const cls = className('inline-block', {
+    'bg-orange-500 py-2 px-4 rounded-full uppercase': kind === 'primary',
+    'text-lg py-3 px-6': size === 'lg',
+})
+---
+
+
+{href ? (
+    <a href={href} class={cls}>
+        <slot />
+    </a>
+) : (
+    <button class={cls}>
+        <slot />
+    </button>
+)}
+

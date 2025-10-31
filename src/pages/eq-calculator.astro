@@ -1,17 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import HomeSection from '../components/HomeSection.astro';
+import Section from '../components/Section.astro';
+import Form from '../components/Form.astro';
 ---
 
 <Layout title="Makin' Bacon - Equilibrium Cure Calculator">
 	<Header isHome={false} />
-	<main>
-		<HomeSection className="top-[-3vw]">
-			<p>Makin' Bacon is your guide to the surprisingly easy, delicious journey of learning to make your own bacon!</p>
-		</HomeSection>
-		<section>
-			not a home section!
-		</section>
+	<main class="torn">
+		<Section>
+			<p>The EQ calculator helps you determine the correct amounts of each ingredient in the cure.</p>
+			<Form />
+		</Section>
 	</main>
 </Layout>

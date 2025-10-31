@@ -23,6 +23,15 @@ const { title } = Astro.props;
 	<body class="font-open text-white">
 		<slot />
 		<Footer />
+		<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js' is:inline></script>
+		<script is:inline>
+			kofiWidgetOverlay.draw('makinbacon1', {
+			'type': 'floating-chat',
+			'floating-chat.donateButton.text': 'Support Us',
+			'floating-chat.donateButton.background-color': '#00b9fe',
+			'floating-chat.donateButton.text-color': '#fff'
+			});
+		</script>
 	</body>
 </html>
 <style is:global>
@@ -35,10 +44,48 @@ const { title } = Astro.props;
 		background-attachment: fixed;
 	}
 	body {
-		min-height: 100vh;
+		@apply min-h-full font-open font-light tracking-wide;
 	}
 	article p,
 	article ul {
 		@apply mb-8;
+	}
+
+	/* torn edges */
+
+	.torn {
+		position: relative;
+		background-color: #e2e8f0;
+		color: #444;
+	}
+	.torn:before,
+	.torn:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		background-size: 100%;
+		height: 3vw;
+	}
+	.torn:before {
+		top: -3vw;
+		background-image: url('/images/separator-bottom.svg');
+		background-position: top center;
+	}
+	.torn:after {
+		bottom: -3vw;
+		background-image: url('/images/separator.svg');
+		background-position: bottom center;
+	}
+
+	/* kofi widget */
+
+	.floatingchat-container-wrap {
+		left: auto !important;
+		right: 0.5rem !important;
+	}
+	.floating-chat-kofi-popup-iframe {
+		left: auto !important;
+		right: 1rem !important;
 	}
 </style>
